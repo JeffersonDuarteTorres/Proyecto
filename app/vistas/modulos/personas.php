@@ -30,9 +30,9 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Registrar nuevo usuario</p>
 
-      <form action="../../index.html" method="post">
+      <form action="" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Nombre completo">
+          <input type="text" class="form-control" name="nombre" placeholder="Nombre completo">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Correo electronico">
+          <input type="email" class="form-control" name="correo" placeholder="Correo electronico">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Numero telefonico">
+          <input type="text" class="form-control" name="numeroTelefonico" placeholder="Numero telefonico">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-tablet-alt"></span>
@@ -56,19 +56,14 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Contraseña">
+          <input type="password" class="form-control" name="clave" placeholder="Contraseña">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Repita contraseña">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
+        
             
           </div>
         </div>
@@ -83,6 +78,27 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
+
+          <?php
+
+              /*=============================================
+              FORMA EN QUE SE INSTA­NCIA LA CLASE DE UN MÉTODO ESTÁTICO
+              =============================================*/
+
+              $registro = ControladorRegistro::ctrRegistro();
+
+              if ($registro === 'ok') {
+                  // Aquí sí entra cuando el método devuelve "ok"
+                  echo '<script>
+                      if (window.history.replaceState) {
+                          window.history.replaceState(null, null, window.location.href);
+                      }
+                  </script>';
+                  echo '<div class="alert alert-success">El usuario ha sido registrado</div>';
+              }
+
+            ?>
+
             <button type="submit" class="btn btn-primary btn-block">Registrar</button>
           </div>
           <!-- /.col -->

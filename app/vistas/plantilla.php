@@ -32,9 +32,7 @@
 
   <?php
 
-$login=true;
 
-    if($login==true){
 
     echo '<div class="wrapper">';
 
@@ -57,9 +55,9 @@ $login=true;
 
     echo '</div>';
 
-    }else{
+    
     include "modulos/login.php";
-    }
+    
   ?>
 
 
